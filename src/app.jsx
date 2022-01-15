@@ -12,7 +12,9 @@ function App() {
       redirect: 'follow'
     };
     
-    fetch("https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResult=25&key=AIzaSyCiclJrAtlEJR52SilZ03S-vmbUAzoYg_E", requestOptions)
+    fetch("https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResult=30&key=AIzaSyCiclJrAtlEJR52SilZ03S-vmbUAzoYg_E", 
+      requestOptions)
+
       .then(response => response.json())
       .then(result => setVideos(result.items))//받아온 비디오들을 items에 업데이트
       .catch(error => console.log('error', error));
